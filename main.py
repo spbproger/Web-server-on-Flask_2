@@ -1,6 +1,7 @@
+
 from flask import Flask, request
 import os.path
-from utils import get_filter, get_map, get_unique, get_sort, get_limit
+from utils import get_filter, get_map, get_unique, get_sort, get_limit, get_regexp
 
 app = Flask(__name__)
 
@@ -14,7 +15,8 @@ def apply_filter(data_path):
         'map': get_map,
         'unique': get_unique,
         'sort': get_sort,
-        'limit': get_limit
+        'limit': get_limit,
+        'regexp': get_regexp
     }
 
     with open(data_path) as file:
